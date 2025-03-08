@@ -24,7 +24,8 @@
       - [x] @Repository, @Service으로 자동 스캔하는 방법도 있지만 이번 주차에서는 Bean을 직접 등록하고 ApplicationContext를 사용해보았다.
 
 
-  💾 [ 2주차 내용 - Soyul블로그 ](https://soyulia.hashnode.dev/spring-ioc)
+  💾 [ ApplicationContext - Soyul블로그 ](https://soyulia.hashnode.dev/spring-applicationcontext)  
+  💾 [ IoC와 DI - Soyul블로그 ](https://soyulia.hashnode.dev/spring-ioc-di)
 
 </div>
 </details>
