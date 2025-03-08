@@ -16,7 +16,7 @@
       - [x] Board 생성 : id, title, content, writer 필드
   3. repository 폴더 생성  
       - [x] BoardRepository를 이용하여 다형성 활용 : create, findById, findByTitle, findAll, update, delete
-      - [x] MemoryRepository로 구현체 생성
+      - [x] MemoryRepository로 구현체 생성 : 배열 대신 Map 사용, 등록 개수 제한 제거
   4. service 폴더 생성
       - [x] BoardService : 제목이 중복될 경우 예외 발생
   5. AppConfig 폴더 생성  
