@@ -5,16 +5,18 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Import;
 import study.crud.entity.Board;
 import study.crud.service.BoardService;
 
 import java.util.Scanner;
 
-@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
+//@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
 public class CrudApplication {
     public static void main(String[] args) {
-        ApplicationContext ac = SpringApplication.run(CrudApplication.class, args);
+        //ApplicationContext ac = SpringApplication.run(CrudApplication.class, args);
+        ApplicationContext ac=new AnnotationConfigApplicationContext(AppConfig.class);
         BoardService boardService = ac.getBean(BoardService.class);
         Scanner scanner = new Scanner(System.in);
         while (true) {
