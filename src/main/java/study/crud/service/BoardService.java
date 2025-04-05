@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 @RequiredArgsConstructor
+@Service
 public class BoardService {
     private final BoardRepository repository;
     

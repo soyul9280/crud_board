@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
+@Repository
 public class MemoryRepository implements BoardRepository {
     Map<Integer,Board> data = new HashMap<>();
 

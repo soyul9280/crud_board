@@ -1,23 +1,22 @@
 package study.crud;
 
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.Import;
+
 import study.crud.entity.Board;
 import study.crud.service.BoardService;
 
 import java.util.Scanner;
 
-//@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
+@SpringBootApplication
 public class CrudApplication {
     public static void main(String[] args) {
-        //ApplicationContext ac = SpringApplication.run(CrudApplication.class, args);
-        ApplicationContext ac=new AnnotationConfigApplicationContext(AppConfig.class);
-        BoardService boardService = ac.getBean(BoardService.class);
+        ApplicationContext ac = SpringApplication.run(CrudApplication.class, args);
+        /*ApplicationContext ac=new AnnotationConfigApplicationContext(AppConfig.class);
+        BoardService boardService = ac.getBean(BoardService.class);*/
+        BoardService boardService = ac.getBean(BoardService.class); //설정 파일을 명시하지 않았는데 service에 repository주입되면서 작동
         Scanner scanner = new Scanner(System.in);
         while (true) {
             try{
