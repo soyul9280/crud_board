@@ -1,6 +1,7 @@
 package study.crud.repository;
 
 import org.springframework.stereotype.Repository;
+import study.crud.dto.UpdateBoardDto;
 import study.crud.entity.Board;
 
 import java.util.ArrayList;
@@ -49,12 +50,11 @@ public class MemoryRepository implements BoardRepository {
     }
 
     @Override
-    public void update(int id,Board boardParam) {
+    public Board update(int id, UpdateBoardDto boardParam) {
         Board board = data.get(id);
         board.setTitle(boardParam.getTitle());
         board.setContent(boardParam.getContent());
-        board.setWriter(boardParam.getWriter());
-        data.put(board.getId(), board);
+        return board;
     }
 
     @Override
