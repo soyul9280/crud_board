@@ -3,16 +3,21 @@ package study.crud.entity;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.time.Instant;
+import java.util.UUID;
+
 @Getter
 @NoArgsConstructor
 public class Board {
-    private int id=1;
+    private UUID id;
+    private Instant createdAt;
     private String title;
     private String content;
     private String writer;
 
     public Board(String title, String content, String writer) {
-        this.id= ++id;
+        id = UUID.randomUUID();
+        createdAt = Instant.now();
         this.title = title;
         this.content = content;
         this.writer = writer;
