@@ -22,11 +22,10 @@ import study.crud.dto.BoardUpdateForm;
 @Table(name = "boards")
 @ToString(of = {"title","content","writer"})
 public class Board extends BaseUpdatableEntity{
-    @NotBlank(message = "제목은 필수입니다.")
+
     @Column(nullable = false)
     private String title;
 
-    @NotBlank(message = "내용을 입력해주세요.")
     @Column(nullable = false)
     private String content;
 
@@ -35,10 +34,10 @@ public class Board extends BaseUpdatableEntity{
     private User writer;
 
     public void updateBoard(BoardUpdateForm dto) {
-        if(dto.getTitle() != null|| dto.getTitle() != title) {
+        if(dto.getTitle() != title) {
             this.title = dto.getTitle();
         }
-        if(dto.getContent() != null|| dto.getContent() != content) {
+        if(dto.getContent() != content) {
             this.content = dto.getContent();
         }
         changeUpdatedAt();
