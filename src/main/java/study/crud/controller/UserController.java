@@ -12,11 +12,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import study.crud.dto.BoardSaveForm;
-import study.crud.dto.BoardUpdateForm;
 import study.crud.dto.UserSaveForm;
 import study.crud.dto.UserUpdateForm;
-import study.crud.entity.Board;
 import study.crud.entity.User;
 import study.crud.service.UserService;
 
@@ -55,11 +52,11 @@ public class UserController {
         return "redirect:/user/{userId}";
     }
 
-    @GetMapping("/{UserId}/edit")
+    @GetMapping("/{userId}/edit")
     public String update(@PathVariable UUID userId, Model model) {
         User user = userService.findById(userId);
         model.addAttribute("user", user);
-        return "boardEditForm";
+        return "userEditForm";
     }
 
     @PostMapping("/{userId}/edit")
@@ -85,7 +82,7 @@ public class UserController {
     @PostMapping("/{userId}/delete")
     public String delete(@PathVariable UUID userId) {
         userService.delete(userId);
-        return "redirect:/board";
+        return "redirect:/user";
     }
 
 }
